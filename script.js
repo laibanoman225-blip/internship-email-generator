@@ -21,6 +21,13 @@ generateBtn.addEventListener('click', () => {
     const company = document.getElementById('companyName').value.trim() || "your company";
     const role = document.getElementById('roleType').value;
 
+    // 🛡️ Safety Check: Prevents crash if HTML value doesn't match JavaScript keys
+    if (!templates[role]) {
+        alert(`Error: The HTML dropdown value "${role}" doesn't match any templates in script.js! Make sure your option value is lowercase 'writer', 'developer', or 'designer'.`);
+        console.error(`Missing template key for: ${role}`);
+        return;
+    }
+
     // Get the right internship template and swap the placeholders
     const generatedEmail = templates[role](manager, company);
     
