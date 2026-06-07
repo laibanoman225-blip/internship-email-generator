@@ -3,43 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instant Internship Email Generator</title>
+    <title>QuickPitch - Ultimate Email Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>✉️ QuickPitch</h1>
-            <p>Generate a high-converting cold email for remote roles instantly.</p>
+            <p>Instant, perfectly structured emails for internships, creative work, and everyday life.</p>
         </header>
 
         <main>
             <section class="form-section">
                 <div class="input-group">
-                    <label for="managerName">Hiring Manager Name</label>
-                    <input type="text" id="managerName" placeholder="e.g. John Doe">
+                    <label for="yourName">Your Name (Sender)</label>
+                    <input type="text" id="yourName" placeholder="e.g. Laiba Noman">
                 </div>
 
                 <div class="input-group">
-                    <label for="companyName">Company Name</label>
-                    <input type="text" id="companyName" placeholder="e.g. Canva">
+                    <label for="recipientName">Recipient Name</label>
+                    <input type="text" id="recipientName" placeholder="e.g. John Doe / Hiring Team / Teacher">
                 </div>
 
                 <div class="input-group">
-                    <label for="roleType">Role Type</label>
+                    <label for="contextName">Context / Subject Detail</label>
+                    <input type="text" id="contextName" placeholder="e.g. Canva / Physics Project / Design Revision">
+                </div>
+
+                <div class="input-group">
+                    <label for="roleType">Select Email Type</label>
                     <select id="roleType">
-                        <option value="writer">Content Writer</option>
-                        <option value="developer">Frontend Developer</option>
-                        <option value="designer">UI/UX Designer</option>
+                        <optgroup label="💼 Remote Internship Pitches">
+                            <option value="intern_dev">Frontend Dev Internship</option>
+                            <option value="intern_writer">Content Writer Internship</option>
+                        </optgroup>
+                        <optgroup label="🎨 Creative & Dev Workflows">
+                            <option value="work_delivery">Asset/Design Delivery</option>
+                            <option value="work_feedback">Feedback & Revision Request</option>
+                        </optgroup>
+                        <optgroup label="🏫 Everyday Professional & School">
+                            <option value="everyday_followup">The Project Follow-Up</option>
+                            <option value="everyday_inquiry">Request / Inquiry (e.g. Teacher/Manager)</option>
+                        </optgroup>
                     </select>
                 </div>
 
-                <button id="generateBtn">Generate Email ✨</button>
+                <button id="generateBtn">Generate Perfect Email ✨</button>
             </section>
 
             <section class="preview-section">
                 <div id="emailOutput" class="email-box">
-                    Fill out the form and click generate to see your pitch!
+                    Fill out the boxes above and click generate to see your flawlessly formatted email!
                 </div>
                 <button id="copyBtn" class="secondary-btn">Copy to Clipboard 📋</button>
             </section>
