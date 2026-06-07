@@ -1,98 +1,168 @@
-:root {
-    --primary: #4f46e5;
-    --primary-hover: #4338ca;
-    --bg: #f9fafb;
-    --card-bg: #ffffff;
-    --text: #111827;
-    --border: #e5e7eb;
+/* --- Global Reset & Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    margin: 0;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 20px;
 }
 
+/* --- App Container Layout --- */
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
+    background: #ffffff;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 30px;
 }
 
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f3f4f6;
+    padding-bottom: 20px;
 }
 
-.app-layout {
+header h1 {
+    font-size: 28px;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
 }
 
-@media (max-width: 768px) {
-    .app-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-.form-section, .preview-section {
-    background: var(--card-bg);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+/* --- Form & Input Elements --- */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 .input-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-label {
-    display: block;
+.input-group label {
+    font-size: 14px;
     font-weight: 600;
-    margin-bottom: 8px;
+    color: #4b5563;
 }
 
-input, select {
+.input-group input, 
+.input-group select {
     width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border);
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
     border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #f9fafb;
+    color: #111827;
+    transition: all 0.2s ease;
 }
 
+.input-group input:focus, 
+.input-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* --- Interactive Action Buttons --- */
 button {
-    width: 100%;
-    background-color: var(--primary);
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
-    transition: background 0.2s;
-}
-
-button:hover {
-    background-color: var(--primary-hover);
-}
-
-.email-box {
-    background: #f3f4f6;
-    padding: 20px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 12px;
     border-radius: 6px;
-    min-height: 200px;
-    white-space: pre-wrap; /* Keeps the spacing and line breaks of the email */
-    margin-bottom: 20px;
-    border: 1px solid var(--border);
+    border: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#generateBtn {
+    background-color: #3b82f6;
+    color: white;
+    margin-top: 10px;
+}
+
+#generateBtn:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+#generateBtn:active {
+    transform: translateY(1px);
 }
 
 .secondary-btn {
-    background-color: #10b981;
+    background-color: #e5e7eb;
+    color: #374151;
+    width: 100%;
+    margin-top: 15px;
 }
+
 .secondary-btn:hover {
-    background-color: #059669;
+    background-color: #d1d5db;
+}
+
+/* --- Live Text Preview Panel --- */
+.preview-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.preview-section h3 {
+    font-size: 16px;
+    color: #4b5563;
+    margin-bottom: 8px;
+}
+
+.email-box {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    flex-grow: 1;
+    min-height: 250px;
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Keeps all the script linebreaks working */
+    color: #374151;
+    overflow-y: auto;
+}
+
+/* --- Responsive Adjustments (Mobile) --- */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stacks layout boxes vertically */
+    }
+    
+    .container {
+        padding: 20px;
+    }
 }
