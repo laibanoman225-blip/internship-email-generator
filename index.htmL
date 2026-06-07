@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Internship Email Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>✉️ QuickPitch</h1>
+            <p>Generate a high-converting cold email for remote roles instantly.</p>
+        </header>
+
+        <main class="app-layout">
+            <section class="form-section">
+                <div class="input-group">
+                    <label for="managerName">Hiring Manager Name</label>
+                    <input type="text" id="managerName" placeholder="e.g., Sarah Jenkins (or 'Hiring Team')">
+                </div>
+
+                <div class="input-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" placeholder="e.g., Canva">
+                </div>
+
+                <div class="input-group">
+                    <label for="roleType">Role Type</label>
+                    <select id="roleType">
+                        <option value="writer">Content Writer</option>
+                        <option value="developer">Frontend Developer</option>
+                        <option value="designer">UI/UX Designer</option>
+                    </select>
+                </div>
+
+                <button id="generateBtn">Generate Email ✨</button>
+            </section>
+
+            <section class="preview-section">
+                <h3>Your Personalized Pitch</h3>
+                <div id="emailOutput" class="email-box">
+                    Fill out the form and click generate to see your pitch!
+                </div>
+                <button id="copyBtn" class="secondary-btn">Copy to Clipboard 📋</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
