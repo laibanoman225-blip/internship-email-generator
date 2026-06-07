@@ -11,7 +11,7 @@
     <div class="container">
         <header>
             <h1>✉️ QuickPitch</h1>
-            <p>Instant, perfectly structured emails for internships, creative work, and everyday life.</p>
+            <p>Instant, perfectly structured emails for internships, creative work, and school life.</p>
         </header>
 
         <main>
@@ -21,44 +21,63 @@
                     <input type="text" id="yourName" placeholder="e.g. Laiba Noman">
                 </div>
 
-                <div class="input-group">
-                    <label for="titlePrefix">Recipient Title / Formal Pronoun</label>
-                    <select id="titlePrefix">
-                        <option value="">None (Casual / Team Greeting)</option>
-                        <option value="Mr. ">Mr.</option>
-                        <option value="Ms. ">Ms.</option>
-                        <option value="Dr. ">Dr.</option>
-                        <option value="Professor ">Prof.</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="recipientName">Recipient Name / Company Team</label>
-                    <input type="text" id="recipientName" placeholder="e.g. Smith / Hiring Team">
-                </div>
-
-                <div class="input-group">
-                    <label for="contextName">Context / Subject Detail</label>
-                    <input type="text" id="contextName" placeholder="e.g. Honeywell / Siemens / Local Contractor">
+                <div class="input-group-row">
+                    <div class="input-group" style="flex: 1; min-width: 120px;">
+                        <label for="titlePrefix">Title Prefix</label>
+                        <select id="titlePrefix">
+                            <option value="">None (Casual)</option>
+                            <option value="Mr. ">Mr.</option>
+                            <option value="Ms. ">Ms.</option>
+                            <option value="Dr. ">Dr.</option>
+                            <option value="Professor ">Prof.</option>
+                        </select>
+                    </div>
+                    <div class="input-group" style="flex: 2; min-width: 200px;">
+                        <label for="recipientName">Recipient Name / Company Team</label>
+                        <input type="text" id="recipientName" placeholder="e.g. Smith / Hiring Team / Teacher">
+                    </div>
                 </div>
 
                 <div class="input-group">
                     <label for="roleType">Select Email Type</label>
                     <select id="roleType">
-                        <optgroup label="💼 Remote & Technical Internships">
+                        <optgroup label="💼 Internships & Tech Pitches">
                             <option value="intern_firealarm">🔥 Fire Alarm / Systems Internship</option>
-                            <option value="intern_dev">Frontend Dev Internship</option>
-                            <option value="intern_writer">Content Writer Internship</option>
+                            <option value="intern_dev">💻 Frontend Dev Internship</option>
+                            <option value="intern_uiux">🎨 UI/UX Design Internship</option>
+                            <option value="intern_writer">✍️ Content Writer Internship</option>
+                            <option value="intern_video">🎬 Video Editor / Creator Pitch</option>
                         </optgroup>
-                        <optgroup label="🎨 Creative & Dev Workflows">
-                            <option value="work_delivery">Asset/Design Delivery</option>
-                            <option value="work_feedback">Feedback & Revision Request</option>
+                        <optgroup label="🎨 Project Workflows">
+                            <option value="work_delivery">📦 Asset / Project Delivery</option>
+                            <option value="work_feedback">💬 Feedback & Revision Request</option>
                         </optgroup>
-                        <optgroup label="🏫 Everyday Professional & School">
-                            <option value="everyday_followup">The Project Follow-Up</option>
-                            <option value="everyday_inquiry">Request / Inquiry (e.g. Teacher/Manager)</option>
+                        <optgroup label="🏫 School & Everyday Professional">
+                            <option value="school_extension">⏳ Assignment Extension Request</option>
+                            <option value="school_leave">🤒 Sick Leave / Absence Notice</option>
+                            <option value="everyday_followup">🔄 Quick Project Follow-Up</option>
+                            <option value="everyday_thankyou">🤝 Post-Interview / Meeting Thank You</option>
                         </optgroup>
                     </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="emailTone">Email Tone</label>
+                    <select id="emailTone">
+                        <option value="formal">💼 Formal / Professional</option>
+                        <option value="creative">✨ Enthusiastic / Creative</option>
+                        <option value="casual">☕ Casual / Direct</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="contextName">Context / Subject Detail</label>
+                    <input type="text" id="contextName" placeholder="e.g. Computer Science Project, Canva, Web Design">
+                </div>
+
+                <div class="input-group">
+                    <label for="projectLink">Project / Portfolio Link (Optional)</label>
+                    <input type="text" id="projectLink" placeholder="e.g. Paste GitHub repo, Figma, or Google Drive link">
                 </div>
 
                 <button id="generateBtn">Generate Perfect Email ✨</button>
