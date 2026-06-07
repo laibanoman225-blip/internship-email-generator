@@ -21,19 +21,31 @@
                 </div>
 
                 <div class="input-group">
-                    <label for="recipientName">Recipient Name</label>
-                    <input type="text" id="recipientName" placeholder="e.g. John Doe / Hiring Team / Teacher">
+                    <label for="titlePrefix">Recipient Title / Formal Pronoun</label>
+                    <select id="titlePrefix">
+                        <option value="">None (Casual / Team Greeting)</option>
+                        <option value="Mr. ">Mr.</option>
+                        <option value="Ms. ">Ms.</option>
+                        <option value="Dr. ">Dr.</option>
+                        <option value="Professor ">Prof.</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="recipientName">Recipient Name / Company Team</label>
+                    <input type="text" id="recipientName" placeholder="e.g. Smith / Hiring Team">
                 </div>
 
                 <div class="input-group">
                     <label for="contextName">Context / Subject Detail</label>
-                    <input type="text" id="contextName" placeholder="e.g. Canva / Physics Project / Design Revision">
+                    <input type="text" id="contextName" placeholder="e.g. Honeywell / Siemens / Local Contractor">
                 </div>
 
                 <div class="input-group">
                     <label for="roleType">Select Email Type</label>
                     <select id="roleType">
-                        <optgroup label="💼 Remote Internship Pitches">
+                        <optgroup label="💼 Remote & Technical Internships">
+                            <option value="intern_firealarm">🔥 Fire Alarm / Systems Internship</option>
                             <option value="intern_dev">Frontend Dev Internship</option>
                             <option value="intern_writer">Content Writer Internship</option>
                         </optgroup>
