@@ -1,6 +1,9 @@
 // Master database of pre-defined templates across all categories
 const templates = {
     // 💼 Internship Templates
+    intern_firealarm: (yourName, recipient, context) => 
+        `Subject: Application for Fire Alarm Systems / Protection Internship - ${yourName}\n\nHi ${recipient},\n\nI have been deeply interested in ${context}’s innovative approach to smart building safety, circuitry, and fire protection engineering. I am looking for an internship opportunity where I can assist with layout drafting, reviewing safety system schematics, or technical documentation tracking.\n\nI have been practicing basic layout workflows and electrical design rules to ensure system compliance with standard layout codes. Would you happen to have 2 minutes this week to connect regarding how a student assistant could help your team optimize project turnarounds?\n\nBest regards,\n${yourName}`,
+
     intern_dev: (yourName, recipient, context) => 
         `Subject: Remote Frontend Developer Internship Application - ${yourName}\n\nHi ${recipient},\n\nI’ve been following ${context}’s growth and really admire your clean engineering. I’m a frontend developer looking for a remote technical internship where I can add value.\n\nI actually reviewed your landing page on mobile and put together a quick 60-second video showing how a small layout fix could make it even smoother. Would it be alright if I sent that over for your team to see?\n\nBest regards,\n${yourName}`,
     
@@ -30,7 +33,14 @@ const emailOutput = document.getElementById('emailOutput');
 // What happens when you click "Generate Email"
 generateBtn.addEventListener('click', () => {
     const yourName = document.getElementById('yourName').value.trim() || "[Your Name]";
-    const recipient = document.getElementById('recipientName').value.trim() || "[Recipient]";
+    const prefix = document.getElementById('titlePrefix').value;
+    let recipientInput = document.getElementById('recipientName').value.trim();
+    
+    if (!recipientInput) {
+        recipientInput = "Team";
+    }
+
+    const fullRecipient = prefix + recipientInput;
     const context = document.getElementById('contextName').value.trim() || "[Project/Company/Subject]";
     const role = document.getElementById('roleType').value;
 
@@ -41,7 +51,7 @@ generateBtn.addEventListener('click', () => {
     }
 
     // Process variables into template output
-    const generatedEmail = templates[role](yourName, recipient, context);
+    const generatedEmail = templates[role](yourName, fullRecipient, context);
     
     // Render text to screen inside the container
     emailOutput.innerText = generatedEmail;
